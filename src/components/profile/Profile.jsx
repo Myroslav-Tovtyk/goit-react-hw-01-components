@@ -1,42 +1,49 @@
 import PropTypes from 'prop-types';
-import { AvatarImg, Container, Label, Located, Name, StatsItem, StatsList, Tag, Volume, Wrapper } from './Profile.styled';
 
+import {
+  Card,
+  CardBody,
+  CardPoster,
+  CardText,
+  CardTitle,
+  CardFooter,
+  Tag,
+  UserBox,
+  UserInfo,
+} from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
-    return (
-        <Container>
-            <Wrapper>
-                <AvatarImg
-                    src={avatar}
-                    alt="User avatar"                    
-                />
-                <Name>{username}</Name>
-                <Tag>@{tag}</Tag>
-                <Located>{location}</Located>
-            </Wrapper>
+  return (
+    <Card>
+      <CardBody>
+        <CardPoster src={avatar} alt="User avatar" />
+        <CardTitle>{username}</CardTitle>
+        <Tag>@{tag}</Tag>
+        <CardText>{location}</CardText>
+      </CardBody>
 
-            <StatsList>
-                <StatsItem>
-                    <Label>Followers</Label>
-                    <Volume>{stats.followers}</Volume>
-                </StatsItem>
-                <StatsItem>
-                    <Label>Views</Label>
-                    <Volume>{stats.views}</Volume>
-                </StatsItem>
-                <StatsItem>
-                    <Label>Likes</Label>
-                    <Volume>{stats.likes}</Volume>
-                </StatsItem>
-            </StatsList>
-        </Container>
-    );
+      <UserBox>
+        <UserInfo>
+          <CardText>Followers</CardText>
+          <CardFooter>{stats.followers}</CardFooter>
+        </UserInfo>
+        <UserInfo>
+          <CardText>Views</CardText>
+          <CardFooter>{stats.views}</CardFooter>
+        </UserInfo>
+        <UserInfo>
+          <CardText>Likes</CardText>
+          <CardFooter>{stats.likes}</CardFooter>
+        </UserInfo>
+      </UserBox>
+    </Card>
+  );
 };
 
 Profile.propTypes = {
-    username: PropTypes.string.isRequired,
-    tag: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
-    stats: PropTypes.objectOf(PropTypes.number).isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };

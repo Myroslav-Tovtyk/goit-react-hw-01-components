@@ -1,91 +1,87 @@
-import styled from "styled-components";
+import styled from '@emotion/styled';
 
-export const Container = styled.div`
-margin: 15px;
-border: 1px solid black;
-border-radius: 4px;
-box-shadow: 
-        0px 1px 3px rgba(0, 0, 0, 0.12),
-        0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: ${props => props.theme.spacing(100)};
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+
+  box-shadow: ${props => props.theme.shadows.regular};
+  border-radius: ${props => props.theme.spacing(4)};
+  background: ${props => props.theme.colors.white};
 `;
 
-export const Wrapper = styled.div`
-padding: 10px;
+export const CardHeader = styled.div`
+  background-color: ${props => props.theme.colors.gray};
 `;
 
-export const Name = styled.p`
-font-weight: 700;
-font-size: 32px;
-line-height: 1.31;
-letter-spacing: 0.05em;
-color: #000000;
-
-text-align: center;
+export const CardPoster = styled.img`
+  object-fit: cover;
 `;
 
-export const Tag = styled.p`
-font-weight: 400;
-font-size: 20px;
-line-height: 1.31;
-letter-spacing: 0.05em;
-color: #000000;
+export const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${props => props.theme.spacing(2)};
 
-text-align: center;
+  padding: ${props => props.theme.spacing(4)};
 `;
 
-export const Located = styled.p`
-font-weight: 400;
-font-size: 20px;
-line-height: 1.31;
-letter-spacing: 0.05em;
-color: #000000;
+export const Tag = styled.span`
+  align-self: center;
 
-text-align: center;
+  padding: ${props => props.theme.spacing(1)} ${props => props.theme.spacing(3)};
+  border-radius: ${props => props.theme.spacing(4)};
+  font-size: ${props => props.theme.spacing(3)};
+  color: ${props => props.theme.colors.white};
+
+  background: ${props => props.theme.colors.tagBackground};
 `;
 
-export const StatsList = styled.ul`
-padding: 0, 10px;
-list-style: none;
+export const CardTitle = styled.h3`
+  font-size: ${props => props.theme.spacing(6)};
+  text-transform: capitalize;
+  text-align: center;
 
-display: flex;
-align-items: center;
-
-background-color: #d1d1d1;
-border: 1px solid grey;
+  margin-bottom: 0;
 `;
 
-export const StatsItem = styled.li`
-width: 100%;
-border-right: 1px solid grey;
+export const CardText = styled.p`
+  font-weight: 200;
+  letter-spacing: ${props => props.theme.spacing(0.2)};
+  text-align: center;
+
+  margin-bottom: 0;
 `;
 
-export const Label = styled.span`
-font-weight: 400;
-font-size: 20px;
-line-height: 1.31;
-letter-spacing: 0.05em;
-color: #000000;
-
-text-align: center;
+export const CardFooter = styled.div`
+  display: flex;
+  padding: ${props => props.theme.spacing(4)};
+  margin-top: auto;
 `;
 
-export const Volume = styled.span`
-display: block;
-
-font-weight: 700;
-font-size: 20px;
-line-height: 1.31;
-letter-spacing: 0.05em;
-color: #000000;
-
-text-align: center;
+export const UserBox = styled.div`
+  display: flex;
+  gap: ${props => props.theme.spacing(2)};
 `;
 
-export const AvatarImg = styled.img`
-display: block;
-margin: auto;
-width: 120px;
-height: 100px;
+export const Avatar = styled.img`
+  border-radius: 50%;
+`;
+
+export const UserInfo = styled.div`
+  position: relative;
+`;
+
+export const UserName = styled.h3`
+  font-size: ${props => props.theme.fontSizes.small};
+
+  margin-bottom: ${props => props.theme.spacing(1)};
+`;
+
+export const Date = styled.small`
+  color: ${props => props.theme.colors.gray};
 `;

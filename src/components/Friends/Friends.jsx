@@ -1,17 +1,18 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import { FriendsItem, Avatar, Name, Status } from './Friends.styled';
 
-export const Friends = ({avatar, name, isOnline}) => {
-    return (                           
-        <div>                     
-            <span>{isOnline ? 'Online' : 'Offline'}</span>
-            <img src={avatar} alt={name} width='48' />
-            <span>{name}</span>
-        </div>        
-    );
+export const Friends = ({ avatar, name, isOnline }) => {
+  return (
+    <FriendsItem>
+      <Status>{isOnline ? 'Online' : 'Offline'}</Status>
+      <Avatar src={avatar} alt={name} width="48" />
+      <Name>{name}</Name>
+    </FriendsItem>
+  );
 };
 
 Friends.propTypes = {
-    isOnline: PropTypes.bool.isRequired,
-    avatar: PropTypes.string.isRequired,
-    percentage: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };

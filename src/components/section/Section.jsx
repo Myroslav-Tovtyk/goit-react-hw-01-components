@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from './Section.styled';
+import { Sectio, StatisticTitle } from './Section.styled';
 
 export const Section = ({ title, children }) => {
   return (
-    <Container>
-      {title && <h2>{title}</h2>}
-      {children}
-    </Container>
+    <Sectio>
+      <StatisticTitle>
+        {title && <h3>{title}</h3>}
+        {children}
+      </StatisticTitle>
+    </Sectio>
   );
-}
+};
 
 Section.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
 };
-

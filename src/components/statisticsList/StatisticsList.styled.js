@@ -1,12 +1,9 @@
-import styled from "styled-components";
+import styled from '@emotion/styled';
 
-export const StatsList = styled.ul`
-padding: 0, 10px;
-list-style: none;
+export const StatisticList = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-display: flex;
-align-items: center;
-
-background-color: #d1d1d1;
-border: 1px solid grey;
+  gap: ${props => props.theme.spacing(2)};
 `;

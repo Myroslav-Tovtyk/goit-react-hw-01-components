@@ -1,24 +1,17 @@
-import user from 'user.json';
-import data from 'data.json';
-import friends from 'friends.json';
+import user from '../data/user.json';
+import data from '../data/data.json';
+import friends from '../data/friends.json';
+import transactions from '../data/transactions.json';
 
-import { Profile } from "./profile/Profile";
+import { Profile } from './profile/Profile';
 import { Section } from './section/Section';
 import { StatisticsList } from './statisticsList/StatisticsList';
 import { Friendslist } from './Friendslist/Friendslist';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    <>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -26,12 +19,11 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-
       <Section title="Upload stats">
         <StatisticsList items={data} />
       </Section>
-
-      <Friendslist friends={friends} />      
-    </div>  
+      <Friendslist friends={friends} />
+      <TransactionHistory items={transactions} />;
+    </>
   );
 };

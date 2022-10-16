@@ -1,12 +1,9 @@
-import styled from "styled-components";
+import styled from '@emotion/styled';
 
-export const StatsList = styled.ul`
-padding: 0, 10px;
-list-style: none;
+export const LeaderBoard = styled.div`
+  width: ${props => props.theme.spacing(120)};
+  border-radius: ${props => props.theme.spacing(3)};
 
-display: flex;
-align-items: center;
-
-background-color: #d1d1d1;
-border: 1px solid grey;
+  margin: 0 auto;
+  overflow: hidden;
 `;
